@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Slider</title>
+    <link rel="stylesheet" href="libs/neo.range.css">
+    <style>
+    *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui;
+        background-color: #222;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="range-container" id="my-slider"></div>
+    
+    <script src="libs/neo.range.js"></script>
+    <script>
+      const settings = {
+      // input values
+      min: -50,
+      max: 100,
+      step: 5,
+      min_value: -5,
+      max_value: 70,
+      // scale settings
+      use_scale_steps: true,
+      scale_steps: 50,
+      scale_segments: 5,
+      // slider settings
+      use_tooltip: true,
+      prefix: "",
+      suffix: "°C",
+      // color settings
+      color_primary: "#00ffbb",
+      track_color: "rgb(0 255 187 / 0.4)",
+      tooltip_bg_color: "rgb(0 255 187 / 0.2)",
+      // size settings
+      marker_size: "15px",
+      track_height: "2px",
+    };
+    const slider = new NeoRange('#my-slider',settings);
+    </script>
+
+  </body>
+</html>
