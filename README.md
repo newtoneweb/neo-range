@@ -1,5 +1,7 @@
 # NeoRange
 
+[Русская версия](README.ru.md)
+
 A modern, customizable dual-thumb range slider with a sleek neon design.
 
 ## Features
