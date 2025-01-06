@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +13,84 @@
         padding: 0;
         box-sizing: border-box;
       }
+      :root[data-theme="dark"] {
+        --bg-color: #222;
+        --text-color: #f0f0f0;
+        --switcher-bg: #333;
+      }
+      :root[data-theme="light"] {
+        --bg-color: #f0f0f0;
+        --text-color: #222;
+        --switcher-bg: #ddd;
+        .range-container .slider-tooltip {
+          background-color: #00cc99;
+          color: #222;
+        }
+      }
       body {
-        min-height: 100svh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: system-ui;
-        background-color: #222;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        flex-direction: column;
+        gap: 2rem;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .docs-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #00cc99;
+        color: #222;
+        text-decoration: none;
+        border-radius: 4px;
+        font-family: system-ui;
+      }
+      .docs-button:hover {
+        background: #00cc99;
+      }
+      .theme-switcher {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        background: var(--switcher-bg);
+        display: flex;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .theme-switcher span {
+        padding: 0.5rem;
+        border-radius: 1.5rem;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .theme-switcher span.active {
+        background: #00cc99;
+      }
+      .theme-switcher img {
+        width: 20px;
+        height: 20px;
+        filter: invert(1);
+      }
+      [data-theme="light"] .theme-switcher img {
+        filter: invert(0);
       }
       </style>
   </head>
   <body>
+    <div class="theme-switcher">
+      <span class="light" title="Light theme"><img src="img/sun.svg" alt="Light theme"></span>
+      <span class="dark active" title="Dark theme"><img src="img/moon.svg" alt="Dark theme"></span>
+    </div>
     <div class="range-container" id="my-slider"></div>
+    <a href="docs/index.html" class="docs-button">View Documentation</a>
     
     <script src="libs/neo.range.js"></script>
     <script>
@@ -44,7 +110,7 @@
       prefix: "",
       suffix: "°C",
       // color settings
-      color_primary: "#00ffbb",
+      color_primary: "#00cc99",
       track_color: "rgb(0 255 187 / 0.4)",
       tooltip_bg_color: "rgb(0 255 187 / 0.2)",
       // size settings
@@ -52,7 +118,33 @@
       track_height: "2px",
     };
     const slider = new NeoRange('#my-slider',settings);
-    </script>
 
+    // Theme switcher
+    const themeSwitcher = document.querySelector('.theme-switcher');
+    const html = document.documentElement;
+    
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('neorange-theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    
+    // Update initial active state
+    themeSwitcher.querySelectorAll('span').forEach(span => {
+      span.classList.toggle('active', span.classList.contains(savedTheme));
+    });
+    
+    themeSwitcher.addEventListener('click', (e) => {
+        const target = e.target.closest('span');
+        if (target) {
+            const theme = target.classList.contains('light') ? 'light' : 'dark';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('neorange-theme', theme);
+            
+            // Update active state
+            themeSwitcher.querySelectorAll('span').forEach(span => {
+                span.classList.toggle('active', span.classList.contains(theme));
+            });
+        }
+    });
+    </script>
   </body>
 </html>

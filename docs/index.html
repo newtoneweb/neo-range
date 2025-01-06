@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoRange Documentation</title>
+    <style>
+      *, ::before, ::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      :root[data-theme="dark"] {
+          --bg-color: #222;
+          --text-color: #f0f0f0;
+          --code-bg: #333;
+          --switcher-bg: #333;
+          --heading-color: #00cc99;
+      }
+      :root[data-theme="light"] {
+          --bg-color: #f0f0f0;
+          --text-color: #222;
+          --code-bg: #e5e5e5;
+          --switcher-bg: #ddd;
+          --heading-color: #009973;
+          code {
+              color: #222;
+          }
+      }
+      body {
+          min-height: 100svh;
+          font-family: system-ui;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          line-height: 1.6;
+          transition: background-color 0.3s, color 0.3s;
+      }
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+      h1, h2 {
+          color: var(--heading-color);
+          margin-bottom: 1rem;
+      }
+      h2 {
+          margin-top: 2rem;
+      }
+      .author {
+          color: #999;
+          font-style: italic;
+          margin-bottom: 2rem;
+      }
+      .author a {
+          color: #00cc99;
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+      .author a:hover {
+          color: #00cc99;
+      }
+      pre {
+          background: var(--code-bg);
+          padding: 1rem;
+          border-radius: 4px;
+          overflow-x: auto;
+          margin: 1rem 0;
+          transition: background-color 0.3s;
+      }
+      code {
+          font-family: monospace;
+          color: #f0f0f0;
+      }
+      .back-button {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: #00cc99;
+          color: #222;
+          text-decoration: none;
+          border-radius: 4px;
+          margin-top: 2rem;
+      }
+      .back-button:hover {
+          background: #00cc99;
+      }
+
+      .button-outline {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          border: 2px solid #00cc99;
+          color: #00cc99;
+          text-decoration: none;
+          border-radius: 4px;
+          margin-top: 2rem;
+      }
+      .button-outline:hover {
+          background: #00cc99;
+          color: #222;
+      }
+      .theme-switcher {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          padding: 0.5rem;
+          border-radius: 2rem;
+          background: var(--switcher-bg);
+          display: flex;
+          gap: 0.5rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+      .theme-switcher span {
+          padding: 0.5rem;
+          border-radius: 1.5rem;
+          transition: background-color 0.3s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .theme-switcher span.active {
+          background: #00cc99;
+      }
+      .theme-switcher img {
+          width: 20px;
+          height: 20px;
+          filter: invert(1);
+      }
+      [data-theme="light"] .theme-switcher img {
+          filter: invert(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <span class="light" title="Light theme"><img src="../img/sun.svg" alt="Light theme"></span>
+      <span class="dark active" title="Dark theme"><img src="../img/moon.svg" alt="Dark theme"></span>
+    </div>
+    <div class="container">
+      <h1>NeoRange Documentation</h1>
+      <p class="author">
+        Created by
+        <a href="https://github.com/newtoneweb" target="_blank">Viorel Odajiu</a>
+      </p>
+
+      <h2>Installation</h2>
+      <p>Include the required files in your HTML:</p>
+      <pre><code>&lt;link rel="stylesheet" href="libs/neo.range.css"&gt;
+&lt;script src="libs/neo.range.js"&gt;&lt;/script&gt;</code></pre>
+
+      <h2>Basic Usage</h2>
+      <p>Create a container element and initialize the slider:</p>
+      <pre><code>&lt;div id="my-slider"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+const slider = new NeoRange('#my-slider', {
+    min: -50,
+    max: 100,
+    step: 5,
+    min_value: -5,
+    max_value: 70
+});
+&lt;/script&gt;</code></pre>
+
+      <h2>Configuration Options</h2>
+      <pre><code>const settings = {
+    // input values
+    min: -50,
+    max: 100,
+    step: 5,
+    min_value: -5,
+    max_value: 70,
+    // scale settings
+    use_scale_steps: true,
+    scale_steps: 50,
+    scale_segments: 5,
+    // slider settings
+    use_tooltip: true,
+    prefix: "",
+    suffix: "°C",
+    // color settings
+    color_primary: "#00cc99",
+    track_color: "rgb(0 255 187 / 0.4)",
+    tooltip_bg_color: "rgb(0 255 187 / 0.2)",
+    // size settings
+    marker_size: "15px",
+    track_height: "2px"
+};</code></pre>
+
+      <h2>Methods</h2>
+      <p>Get the current range values:</p>
+      <pre><code>const range = slider.getRange();
+console.log(range.from, range.to);</code></pre>
+
+      <a href="../index.html" class="back-button">← Back to Demo</a>
+      <a href="https://github.com/newtoneweb/neo-range" class="button-outline">View on GitHub</a>
+    </div>
+
+    <script>
+      // Theme switcher
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const html = document.documentElement;
+
+      // Load saved theme from localStorage
+      const savedTheme = localStorage.getItem('neorange-theme') || 'dark';
+      html.setAttribute('data-theme', savedTheme);
+      
+      // Update initial active state
+      themeSwitcher.querySelectorAll('span').forEach(span => {
+        span.classList.toggle('active', span.classList.contains(savedTheme));
+      });
+
+      themeSwitcher.addEventListener("click", (e) => {
+        const target = e.target.closest("span");
+        if (target) {
+          const theme = target.classList.contains("light") ? "light" : "dark";
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem('neorange-theme', theme);
+
+          // Update active state
+          themeSwitcher.querySelectorAll("span").forEach((span) => {
+            span.classList.toggle("active", span.classList.contains(theme));
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

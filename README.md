@@ -4,6 +4,12 @@
 
 A modern, customizable dual-thumb range slider with a sleek neon design.
 
+[![Author](https://img.shields.io/badge/Author-Viorel%20Odajiu-blue.svg)](https://github.com/newtoneweb)
+[![Documentation](https://img.shields.io/badge/Documentation-View%20Docs-green.svg)](docs/index.html)
+
+## Repository
+GitHub: [https://github.com/newtoneweb/neo-range](https://github.com/newtoneweb/neo-range)
+
 ## Features
 
 - Dual thumb range selection
@@ -44,7 +50,7 @@ const settings = {
     prefix: "",
     suffix: "°C",
     // color settings
-    color_primary: "#00ffbb",
+    color_primary: "#00cc99",
     track_color: "rgb(0 255 187 / 0.4)",
     tooltip_bg_color: "rgb(0 255 187 / 0.2)",
     // size settings

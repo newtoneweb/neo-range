@@ -4,6 +4,12 @@
 
 Современный, настраиваемый двойной ползунок с неоновым дизайном.
 
+[![Автор](https://img.shields.io/badge/Автор-Viorel%20Odajiu-blue.svg)](https://github.com/newtoneweb)
+[![Документация](https://img.shields.io/badge/Документация-Открыть-green.svg)](docs/index.html)
+
+## Репозиторий
+GitHub: [https://github.com/newtoneweb/neo-range](https://github.com/newtoneweb/neo-range)
+
 ## Возможности
 
 - Двойной ползунок для выбора диапазона
@@ -44,7 +50,7 @@ const settings = {
     prefix: "",
     suffix: "°C",
     // настройки цветов
-    color_primary: "#00ffbb",
+    color_primary: "#00cc99",
     track_color: "rgb(0 255 187 / 0.4)",
     tooltip_bg_color: "rgb(0 255 187 / 0.2)",
     // настройки размеров

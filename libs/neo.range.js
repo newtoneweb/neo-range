@@ -20,7 +20,7 @@ class NeoRange {
         prefix: "",
         suffix: "°C",
         // color settings
-        color_primary: "#00ffbb",
+        color_primary: "#00cc99",
         track_color: "rgb(0 255 187 / 0.4)",
         tooltip_bg_color: "rgb(0 255 187 / 0.2)",
         // size settings

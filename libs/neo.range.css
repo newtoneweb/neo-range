@@ -5,19 +5,19 @@
     flex-direction: column;
   }
   
-  .range-container .sliders_control {
+.range-container .sliders_control {
     height: var(--track-height);
     position: relative;
   }
   
-  .range-container .slider-tooltip {
+.range-container .slider-tooltip {
     user-select: none;
     position: absolute;
     top: -3.5rem;
     left: 0;
     width: max-content;
     background-color: var(--tooltip-bg-color);
-    color: var(--color_primary);
+    color: #fff;
     font-size: 0.8rem;
     border-radius: 4px;
     padding: 0.5rem 1rem;
