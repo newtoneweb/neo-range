@@ -5,10 +5,14 @@
 A modern, customizable dual-thumb range slider with a sleek neon design.
 
 [![Author](https://img.shields.io/badge/Author-Viorel%20Odajiu-blue.svg)](https://github.com/newtoneweb)
-[![Documentation](https://img.shields.io/badge/Documentation-View%20Docs-green.svg)](docs/index.html)
+[![Documentation](https://img.shields.io/badge/Documentation-View%20Docs-green.svg)](https://newtoneweb.github.io/neo-range/docs/)
+[![Demo](https://img.shields.io/badge/Demo-Live%20Preview-orange.svg)](https://newtoneweb.github.io/neo-range/)
 
 ## Repository
 GitHub: [https://github.com/newtoneweb/neo-range](https://github.com/newtoneweb/neo-range)
+
+## Demo
+Try it live: [https://newtoneweb.github.io/neo-range/](https://newtoneweb.github.io/neo-range/)
 
 ## Features
 

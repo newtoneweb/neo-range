@@ -5,10 +5,14 @@
 Современный, настраиваемый двойной ползунок с неоновым дизайном.
 
 [![Автор](https://img.shields.io/badge/Автор-Viorel%20Odajiu-blue.svg)](https://github.com/newtoneweb)
-[![Документация](https://img.shields.io/badge/Документация-Открыть-green.svg)](docs/index.html)
+[![Документация](https://img.shields.io/badge/Документация-Открыть-green.svg)](https://newtoneweb.github.io/neo-range/docs/)
+[![Демо](https://img.shields.io/badge/Демо-Посмотреть-orange.svg)](https://newtoneweb.github.io/neo-range/)
 
 ## Репозиторий
 GitHub: [https://github.com/newtoneweb/neo-range](https://github.com/newtoneweb/neo-range)
+
+## Демо
+Посмотреть демо: [https://newtoneweb.github.io/neo-range/](https://newtoneweb.github.io/neo-range/)
 
 ## Возможности
 
